@@ -1,5 +1,5 @@
 # url-shortener
-Url shortner is a tool shortener your url use many API
+Url shortner is a tool shortener your url use many API from pyshorteners
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
 
