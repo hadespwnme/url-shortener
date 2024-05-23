@@ -1,5 +1,14 @@
-from pyshorteners import Shortener
+import sys
+import subprocess
 import os
+
+try:
+    from pyshorteners import Shortener
+except ImportError:
+    print("pyshorteners is not installed. Installing now...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pyshorteners"])
+    from pyshorteners import Shortener
+
 
 red = "\033[31;1m"
 green = "\033[1;32m"
@@ -8,6 +17,8 @@ cyan = "\033[36;1m"
 nc = "\033[1;37m"
 
 pilApi = [
+	(f"{nc}TinyURL.com", 'tinyurl'),
+	(f"{nc}Tiny.cc", 'tinycc'),
     (f"{nc}Adf.ly", 'adfly'),
     (f"{nc}Bit.ly", 'bitly'),
     (f"{nc}Chilp.it", 'chilpit'),
@@ -22,8 +33,6 @@ pilApi = [
     (f"{nc}Po.st", 'post'),
     (f"{nc}Qps.ru", 'qpsru'),
     (f"{nc}Short.cm", 'shortcm'),
-    (f"{nc}Tiny.cc", 'tinycc'),
-    (f"{nc}TinyURL.com", 'tinyurl')
 ]
 
 shortener = Shortener()
